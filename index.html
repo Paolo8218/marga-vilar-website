@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Business Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Margarita's Food Menu!</h1>
+
+        <!-- Main Category Buttons (Initially visible) -->
+        <div id="main-buttons" class="main-buttons">
+            <div class="category">
+                <p class="category-text">Appetizers</p>
+                <button class="category-btn" style="background-image: url('appetizer.jpg');" onclick="showOptions('appetizers')"></button>
+            </div>
+            <div class="category">
+                <p class="category-text">Main Dish</p>
+                <button class="category-btn" style="background-image: url('main_dish.jpg');" onclick="showOptions('main-dish')"></button>
+            </div>
+            <div class="category">
+                <p class="category-text">Desserts</p>
+                <button class="category-btn" style="background-image: url('dessert.jpg');" onclick="showOptions('desserts')"></button>
+            </div>
+        </div>
+
+        <!-- Food Options for Appetizers -->
+        <div id="appetizers-options" class="food-options hidden">
+            <button class="food-btn" style="background-image: url('spring_rolls.jpg');" onclick="selectFood('Spring Rolls')"></button>
+            <button class="food-btn" style="background-image: url('salad.jpg');" onclick="selectFood('Salad')"></button>
+            <button class="food-btn" style="background-image: url('bruschetta.jpg');" onclick="selectFood('Bruschetta')"></button>
+        </div>
+
+        <!-- Food Options for Main Dish -->
+        <div id="main-dish-options" class="food-options hidden">
+            <button class="food-btn" style="background-image: url('pasta.jpg');" onclick="selectFood('Pasta')"></button>
+            <button class="food-btn" style="background-image: url('burger.jpg');" onclick="selectFood('Burger')"></button>
+            <button class="food-btn" style="background-image: url('pizza.jpg');" onclick="selectFood('Pizza')"></button>
+        </div>
+
+        <!-- Food Options for Desserts -->
+        <div id="desserts-options" class="food-options hidden">
+            <button class="food-btn" style="background-image: url('cake.jpg');" onclick="selectFood('Cake')"></button>
+            <button class="food-btn" style="background-image: url('fruit_salad.jpg');" onclick="selectFood('Fruit Salad')"></button>
+            <button class="food-btn" style="background-image: url('ice_cream.jpg');" onclick="selectFood('Ice Cream')"></button>
+        </div>
+
+        <!-- Selected Food and Rating -->
+        <div id="selected-food"></div>
+
+        <!-- Rating System -->
+        <div id="rating" class="hidden">
+            <h3>Rate this food:</h3>
+            <div class="stars" id="stars">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+        </div>
+
+        <!-- Feedback Button -->
+        <button id="feedback-btn" onclick="showFeedbackForm()">Feedback</button>
+
+        <!-- Feedback Form -->
+        <div id="feedback-form" class="hidden">
+            <textarea id="feedback-text" placeholder="Enter your feedback..."></textarea>
+            <button id="submit-feedback" onclick="submitFeedback()">Submit</button>
+            <div id="feedback-response" class="hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
